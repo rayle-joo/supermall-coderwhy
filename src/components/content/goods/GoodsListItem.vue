@@ -43,6 +43,8 @@ export default {
         //     id: this.goodsItem.iid,
         //   },
         // });
+      } else {
+        this.$toast.show("服务器中暂无商品详细", 1500);
       }
     },
   },

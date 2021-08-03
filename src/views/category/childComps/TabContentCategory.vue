@@ -1,13 +1,14 @@
 <template>
   <div class="content-category">
-    <div
+    <a
+      :href="item.link"
       class="content-category-item"
       v-for="(item, index) in showDetailCategory"
       :key="index"
     >
-      <img :src="item.image" alt="" />
+      <img :src="item.image" alt="图片" />
       <span>{{ item.title }}</span>
-    </div>
+    </a>
   </div>
 </template>
 
@@ -33,9 +34,10 @@ export default {
   justify-content: space-between;
 }
 .content-category-item {
+  display: block;
   width: 65px;
   text-align: center;
-  font-size: 14px;
+  font-size: 12px;
   margin: 3px;
 }
 .content-category-item img {

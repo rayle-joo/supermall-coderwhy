@@ -17,7 +17,7 @@
 
     <!-- 右边 -->
     <div class="item-right">
-      <div class="item-title">{{ product.title }}</div>
+      <div class="item-title" @click="titleClick">{{ product.title }}</div>
       <div class="item-desc">商品描述：{{ product.desc }}</div>
 
       <div class="item-price-count">
@@ -51,6 +51,9 @@ export default {
     },
     checkClick(index) {
       this.$store.dispatch("clickCheck", index);
+    },
+    titleClick() {
+      this.$router.push("/detail/" + this.product.iid);
     },
   },
 };

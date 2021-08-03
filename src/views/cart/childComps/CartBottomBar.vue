@@ -33,6 +33,8 @@ export default {
     buyClick() {
       if (this.checkLength === 0) {
         this.$toast.show("没有选中商品！", 1000);
+      } else {
+        this.$toast.show("正在结算中，请稍后！", 1500);
       }
     },
   },
