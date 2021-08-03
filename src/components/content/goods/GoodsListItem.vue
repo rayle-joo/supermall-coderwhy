@@ -27,6 +27,8 @@ export default {
         this.$bus.$emit("itemImageLoad");
       } else if (this.$route.path.indexOf("/detail") !== -1) {
         this.$bus.$emit("CommendImageLoad");
+      } else if (this.$route.path.indexOf("/category") !== -1) {
+        this.$bus.$emit("categoryImgLoad");
       }
     },
     itemClick() {
@@ -48,8 +50,10 @@ export default {
     showImage() {
       if (this.goodsItem.show) {
         return this.goodsItem.show.img;
-      } else {
+      } else if (this.goodsItem.image) {
         return this.goodsItem.image;
+      } else {
+        return this.goodsItem.img;
       }
     },
     iid() {
